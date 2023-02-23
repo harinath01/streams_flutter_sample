@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:streams_flutter_sample/widgets/drm_video_widget.dart';
-import 'package:streams_flutter_sample/widgets/non_drm_video_widget.dart';
+import 'package:streams_flutter_sample/widgets/player_widget.dart';
+import '../constants.dart';
 
 void main() {
   runApp(const MainApp());
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NonDRMVideoWidget()),
+                  MaterialPageRoute(builder: (context) => const VideoPlayerWidget(assetId: Constants.NON_DRM_ASSET_ID)),
                 );
               },
               child: const Text('Non DRM video'),
@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DRMVideoWidget()),
+                  MaterialPageRoute(builder: (context) => const VideoPlayerWidget(assetId: Constants.DRM_ASSET_ID)),
                 );
               },
               child: const Text('DRM video'),

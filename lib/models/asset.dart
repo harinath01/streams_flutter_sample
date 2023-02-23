@@ -1,8 +1,11 @@
+import '../constants.dart';
+
 class Asset {
   final String title;
   final String type;
   final VideoDetails videoDetails;
   final String id;
+  String get drmLicenseUrl => 'https://app.tpstreams.com/api/v1/${Constants.ORG_CODE}/assets/$id/drm_license/';
 
   Asset({
     required this.title,
